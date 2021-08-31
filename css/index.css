@@ -1,0 +1,107 @@
+body
+{
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color:rgb(15,15,15);
+    padding-top: 20px;
+}
+
+label
+{
+    color: orange;
+    font-weight: 500;
+}
+
+span
+{
+    color: orange;
+    font-weight: 500;
+}
+
+input[type=radio]:checked
+{
+    border: orange;
+}
+
+.heading
+{
+    margin-bottom: 30px;
+    color: orange;
+}
+
+#personalInfo
+{
+    margin-bottom: 50px;
+}
+
+.warnMsg
+{
+    color: red;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+#isFanOptions
+{
+    margin-top: 15px;
+}
+
+#isFanOptions div input
+{
+    margin-left: 5px;
+    margin-right: 43px;
+}
+
+#typeOfFan
+{
+    display: none;
+    margin-top: 25px;
+}
+
+#typeOfFan div
+{
+    margin-top: 16px;
+}
+
+#formExplain
+{
+    display: none;
+    margin-top: 25px;
+}
+
+#ownFanDefinition
+{
+    display: none;
+}
+
+#formNflChoose
+{
+    display: none;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+#formNflChoose div
+{
+    margin-top: 10px;
+}
+
+#formSubmit
+{
+    margin: 0 auto;
+    display: block;
+    background-color: orange;
+    border-color: orange;
+    color: black;
+    font-weight: 500; 
+}
+
+footer
+{
+    margin-top: 50px;
+    color: lightgrey;
+    text-align: center;
+    font-size: 10px;
+}

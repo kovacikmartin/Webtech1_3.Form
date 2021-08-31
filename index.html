@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulár</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <form action="mailto:feistu03@gmail.com?subject=Martin_Kováčik" method="POST" enctype="text/plain" onsubmit="return formVal();">
+        <div class="row">
+            <h3 class="col heading">Osobné údaje</h3>
+        </div>
+        <div class="row" id="personalInfo">
+            <div class="col-sm-12 col-md">
+                <input type="hidden" name="myName" id="myName" value="Martin Kovacik">
+                <div class="form-group">
+                    <label for="formName">Meno<span class="formStar"> *</span></label>
+                    <input type="text" class="form-control" name="formName" id="formName" onblur="nameWarn();">
+                    <span class="warnMsg" id="formNameWarn"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formSurname">Priezvisko<span class="formStar"> *</span></label>
+                    <input type="text" class="form-control" name="formSurname" id="formSurname" onblur="surnameWarn();">
+                    <span class="warnMsg" id="formSurnameWarn"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formEmail">Email<span class="formStar"> *</span></label>
+                    <input type="email" class="form-control" name="formEmail" id="formEmail" onblur="emailWarn();">
+                    <span class="warnMsg" id="formEmailWarn"></span>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md">
+                <div class="form-group">
+                    <label for="formDateofBirth">Dátum narodenia<span class="formStar"> *</span></label>
+                    <input type="date" class="form-control" name="formDateofBirth" id="formDateofBirth" onblur="dateOfBirthWarn();">
+                    <span class="warnMsg" id="formDateofBirthWarn"></span>
+                </div>
+                <div class="form-group">
+                    <label for="formAge">Vek</label>
+                    <input type="number" class="form-control" name="formAge" id="formAge" min="3" max="110" onblur="dateOfBirthWarn();">
+                </div>
+                <span class="requiredFieldsInfo">* - povinné polia</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col heading">
+                <h3>NFL</h3>
+            </div>
+        </div>
+        <div class="row">
+            <span class="col">Ste fanúšikom NFL ?</span>
+            <div class="col-sm-12 col-md-12" id="isFanOptions">
+                <div class="form-check form-check-inline">
+                        <label for="formNflYes" class="form-check-label">Áno</label>
+                        <input type="radio" class="form-check-input" name="formIsFan" id="formNflYes" value="Yes" onclick="isFan();">
+                </div>
+                <div class="form-check form-check-inline">
+                        <label for="formNflNo" class="form-check-label">Nie</label>
+                        <input type="radio" class="form-check-input" name="formIsFan" id="formNflNo" value="No" onclick="isFan();">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group" id="formExplain">
+                    <label for="formNflWhyNot">Prečo ?</label>
+                    <textarea class="form-control" name="formNflWhyNot" id="formNflWhyNot"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md" id="typeOfFan">
+                <span>Za akého fanúšika sa považujete ?</span>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fanType" id="sporadicFan" value="Sporadic">
+                    <label for="sporadicFan" class="form-check-label">Sporadický</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fanType" id="casualFan" value="Casual">
+                    <label for="casualFan" class="form-check-label">Bežný</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fanType" id="bandwagonFan" value="Bandwagon">
+                    <label for="bandwagonFan" class="form-check-label">Bandwagon</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fanType" id="diehardFan" value="Diehard">
+                    <label for="diehardFan" class="form-check-label">Diehard</label>
+                </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="fanType" id="otherFan" value="Other" onclick="defineFan();">
+                    <label for="otherFan" class="form-check-label">Iný</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="fanType" id="ownFanDefinition">
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md" id="formNflChoose">
+                <span>Zvoľte Váš obľúbený tím</span>
+                <div class="form-group">
+                    <label for="formNflConference">Konferencia</label>
+                    <select class="form-control" name="conference" id="formNflConference">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formNflDivision">Divízia</label>
+                    <select class="form-control" name="division" id="formNflDivision" >
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formNflTeam">Tím</label>
+                    <select class="form-control" name="team" id="formNflTeam">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" name="formSubmit" id="formSubmit" value="Submit">Submit</button>
+    </form>
+    <footer>All rights reserved, OG Martin Kováčik</footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
